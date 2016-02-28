@@ -45,6 +45,6 @@ end
 
 gem 'ripsum'
 gem 'slim'
+gem 'autoprefixer-rails'
 
 ruby '2.2.4'
-

@@ -2,13 +2,18 @@
 html lang="en"
   head
     meta charset="UTF-8"/
+    meta name="viewport" content="width=device-width, initial-scale=1.0"/
     title Ripsum
 
     = stylesheet_link_tag 'application', media: 'all'
     = csrf_meta_tags
 
   body
+    = render 'header'
+
     .container
       = yield
+
+    = render 'footer'
 
     = javascript_include_tag 'application'

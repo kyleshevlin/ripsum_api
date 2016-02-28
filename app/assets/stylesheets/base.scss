@@ -2,15 +2,21 @@
 // Import All The Things
 //////////////////////////////
 
+// Setup
 @import
   'shevy/shevy',
   'globals/variables'
 ;
 
+// Globals
 @import
+  'globals/tags',
   'globals/typography'
 ;
 
+// Layouts
 @import
-  'layouts/container'
+  'layouts/container',
+  'layouts/header',
+  'layouts/footer'
 ;
