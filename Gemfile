@@ -44,6 +44,7 @@ group :development, :test do
 end
 
 gem 'ripsum'
+gem 'slim'
 
 ruby '2.2.4'
 
