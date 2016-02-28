@@ -46,5 +46,6 @@ end
 gem 'ripsum'
 gem 'slim'
 gem 'autoprefixer-rails'
+gem 'rack-cors', require: 'rack/cors'
 
 ruby '2.2.4'
