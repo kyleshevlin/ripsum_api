@@ -45,3 +45,5 @@ end
 
 gem 'ripsum'
 
+ruby '2.2.4'
+
