@@ -4,4 +4,18 @@
 
 .header {
   padding: 2em 0;
+
+  &-heading {
+    display: inline-block;
+  }
+
+  &-logo {
+    display: inline-block;
+    margin-left: 10px;
+
+    svg {
+      fill: red;
+      width: 45px;
+    }
+  }
 }
