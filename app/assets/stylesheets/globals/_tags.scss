@@ -12,3 +12,23 @@ html {
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
 }
+
+body {
+  background: $c-white;
+  color: $c-black;
+}
+
+strong {
+  font-weight: 700;
+}
+
+pre {
+
+  &[class*="language-"] {
+    margin: 0 0 1.8rem;
+  }
+}
+
+:not(pre) > code[class*="language-"] {
+  padding: .1em .2em;
+}

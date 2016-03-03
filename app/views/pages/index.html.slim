@@ -1,9 +1,53 @@
 article
   p
-    | Ripsum is a small Ruby gem that adds a helper method for outputting random amounts of lorem ipsum <em>per</em> page load. Each time you refresh, you get a new set of words.
+    | Ripsum is a small Ruby gem that adds a helper method for outputting random amounts of Lorem Ipsum <em>per</em> page load. Each time you refresh the page, you get a new set of words.
 
   p
     | The philosophy behind Ripsum is simple: designs should be stress tested. Don't fill your page with perfect, static text. You'll never find the problems that way. Instead, randomize your text to find edge cases you otherwise wouldn't notice. <strong>The next paragraph is an example of Ripsum in action.</strong>
 
-  p = ripsum(50, 0.5);
+  p.ripsum = ripsum(50, 0.5);
 
+  h3 Installation
+
+  p Add the following to your Gemfile:
+  pre: code.language-bash gem 'ripsum'
+
+  p And then execute:
+  pre: code.language-bash bundle install
+
+  p Or install it yourself via:
+  pre: code.language-bash $ gem install ripsum
+
+  h3 Usage
+
+  pre: code.language-ruby
+    | <%= ripsum(100) %>
+
+  p Or
+
+  pre: code.language-ruby
+    | <%= ripsum(100, 50) %> # With Variance
+
+  p
+    | The <code class="language-ruby">ripsum</code> method takes two arguments. The first argument is the standard word count desired. In the example above, that would be 100 words.
+
+  p The second argument is the variance. This argument is optional. The default value for variance is 0 and can be omitted from the method call. This would result in the exact number of words you specify with each page load, though the words themselves will continue to be random. If you would like variance in the word output, you must use a floating point decimal with a leading zero. Thus, in the example above, we desire a possible variance of 50%, so we use the decimal 0.5.
+
+  p Ripsum takes the standard word count and calculates the minimum and maximum word count based on the variance. Then, it randomly chooses a number in that range and outputs that amount of Lorem ipsum text.
+
+  h3 Configuration
+  p
+    | Currently, the only configurable option is the library of words that Ripsum uses. You can pass your own string of words in a configuration block. If you're using Rails, create a file in the <code class="language-bash">config/initializers</code> directory, perhaps named <code class="language-bash">ripsum_initializer.rb</code> (though it can be named whatever you would like).
+
+  p Make sure to restart your server. It is an initializer file after all.
+
+  h3 Psst. There's More!
+  p You might be wondering why a Heroku app has only a home page and no apparent app. That's because the app is a secret.
+
+  p If you append two numbers to the end of the URL, you will hit the Ripsum API and return a small JSON object of random Lorem Ipsum text. In case you need a Ripsum and aren't using a Ruby framework, now you can AJAX some fresh words straight to your application.
+
+  p To do so, do something like this:
+
+  pre: code.language-bash http://ripsum.herokuapp.com/100/50
+
+  p The only difference between this and the Ruby method is that variance should be supplied as an integer of the percent you would like and not a floating point number. Hence, 50 instead of 0.5. Got it? Good!
